@@ -57,15 +57,20 @@ while True:
         email_thread.daemon = True
         clean_thread = Thread(target=clean_folder)
         clean_thread.daemon = True
-
         email_thread.start()
+        clean_thread.start()
+
+       # email_thread.start()
+
 
 
     print(status)
     cv2.imshow("My video", frame)
 
+
     key = cv2.waitKey(1)
     if key == ord("q"):
         break
+
 video.release()
-clean_thread.start()
+
